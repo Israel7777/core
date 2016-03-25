@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nifty>
+    <useStyles filename="nifty-default-styles.xml" />
+    <useControls filename="nifty-default-controls.xml" />
+ 
+    <controlDefinition name = "loadingbar" controller = "mygame.GUI.TestLoadingScreen">
+        <image filename="Interface/border1.png" childLayout="absolute" 
+               imageMode="resize:15,2,15,15,15,2,15,2,15,2,15,15">
+            <image id="progressbar" x="0" y="0" filename="Interface/inner1.png" width="32px" height="100%"
+                   imageMode="resize:15,2,15,15,15,2,15,2,15,2,15,15" />
+        </image>
+    </controlDefinition>
+ 
+    <screen id="start" controller = "mygame.GUI.TestLoadingScreen">
+        <layer id="layer" childLayout="center">
+            <panel id = "panel2" height="30%" width="50%" align="center" valign="center" childLayout="vertical"
+                   visibleToMouse="true">
+                <control id="startGame" name="button" backgroundColor="#0000" label="Load Game" align="center">
+                    <interact onClick="showLoadingMenu()" />
+                </control>
+            </panel>
+        </layer>
+    </screen>
+ 
+    <screen id="loadlevel" controller = "mygame.GUI.TestLoadingScreen">
+        <layer id="loadinglayer" childLayout="center" backgroundColor="#000000">
+            <panel id = "loadingpanel" childLayout="vertical" align="center" valign="center" height="32px" width="70%">
+                <control name="loadingbar" align="center" valign="center" width="100%" height="100%" />
+                <control id="loadingtext" name="label" align="center" 
+                         text="                                                  "/>
+            </panel>
+        </layer>
+    </screen>
+ 
+    <screen id="end" controller = "mygame.GUI.TestLoadingScreen">
+        <layer id="login" childLayout="center" backgroundColor="#ffffff">
+            <panel id = "loginpanel" childLayout="vertical" align="center" valign="center" height="120px" width="70%">
+                <control name="label" id="name" color="#000000ff" width="250px" text="" font="aurulent-sans-16.fnt" height="50px"/>
+                <control name="label" id="age" color="#000000ff" width="250px" text="" font="aurulent-sans-16.fnt" height="50px"/>
+                <control name="label" id="curriculum" color="#000000ff" width="250px" text="" font="aurulent-sans-16.fnt" height="50px"/>
+            </panel>
+        </layer>
+    </screen>
+     <screen id="register" controller="mygame.GUI.TestLoadingScreen">
+        <layer id="foreground" childLayout="center">
+            <panel id="panel_background" childLayout="vertical" width="50%" height="80%">
+                <panel id="panel_top_1st" childLayout="center" backgroundColor="#ffffffff" width="*" height="110px">
+<!--                    <image id="GImage1" filename="Untitled-1.png" width="235px" x="779px" y="500" height="83px"/>
+                --></panel>
+                <panel id="panel_top" childLayout="center" backgroundColor="#ffffffff" width="*" height="31px">
+                    <control name="label" id="GLabel1" color="#000000ff" width="100px" text="name" font="aurulent-sans-16.fnt" height="50px"/>
+                </panel>
+                <panel id="panel_middle" childLayout="center" backgroundColor="#ffffffff" width="*" height="28px">
+                    <control name="textfield" id="GTextfield1" width="50%"/>
+                </panel>
+                <panel id="this" childLayout="center" backgroundColor="#ffffffff" width="*" height="28px">
+                    <control name="label" id="GLabel2" color="#000000ff" width="100px" text="Age" font="aurulent-sans-16.fnt" height="50px"/>
+                </panel>
+                <panel id="panel_bottom" childLayout="center" backgroundColor="#ffffffff" width="*" height="37px">
+                    <control name="textfield" id="GTextfield2" width="50%"/>
+                </panel>
+<!--                <panel id="GPanel5" childLayout="center" backgroundColor="#ffffffff" width="*" height="38px">
+                    <control name="button" id="GButton1" childLayout="center" label="LogIn">
+                        <interact onClick="loginClicked()" />
+                    </control>
+                </panel>-->
+                <panel id="GPanel6" childLayout="center" backgroundColor="#ffffffff" width="*" height="38px">
+                    <control name="button" id="GButton2" childLayout="center" label="Registor">
+                        <interact onClick="registorClicked()" />
+                    </control>
+                </panel>
+            </panel>
+        </layer>
+    </screen>
+ 
+  <screen id="accountList" controller="mygame.GUI.TestLoadingScreen">
+        <layer id="foreground" childLayout="center">
+            <panel id="panel_background" childLayout="vertical" width="50%" height="80%">
+                <panel id="panel_top_1st" childLayout="center" backgroundColor="#ffffffff" width="*" height="110px">
+                    <control name="listBox" id="accountListBox" text="Click Here" horizontal="optional" backgroundColor="#3300ccff" selection="Multiple" vertical="optional" displayItems="4">
+                      <interact onClick="fillAccounts()" />
+                    </control>
+                </panel>
+                <panel id="panel_top_1st" childLayout="center" backgroundColor="#ffffffff" width="*" height="110px">
+                     <control name="label" id="GLabel2" color="#000000ff" width="100%" text="Click Below Blue Button To Log In" font="aurulent-sans-16.fnt" height="50px"/>
+                </panel>
+                
+                <panel id="panel_top_2nd" childLayout="center" backgroundColor="#ffffffff" width="*" height="110px">>
+                <control id="startGame" name="button" backgroundColor="#0000" label="new account" align="center">
+                    <interact onClick="newAccount()" />
+                </control>
+                </panel>
+            </panel>
+        </layer>
+    </screen>
+    <screen id="curriculumList" controller="mygame.GUI.TestLoadingScreen">
+        <layer id="foreground" childLayout="center">
+            <panel id="panel_background" childLayout="vertical" width="50%" height="80%">
+                <panel id="panel_top_1st" childLayout="center" backgroundColor="#ffffffff" width="*" height="110px">
+                    <control name="listBox" id="curriculumListBox" horizontal="optional" backgroundColor="#3300ccff" selection="Multiple" vertical="optional" displayItems="4">
+                      <interact onClick="fillCurriculums()" />
+                    </control>
+                </panel>
+            </panel>
+        </layer>
+    </screen>
+</nifty>

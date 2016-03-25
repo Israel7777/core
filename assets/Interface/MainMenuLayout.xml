@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<nifty xmlns="http://nifty-gui.sourceforge.net/nifty.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xsi:schemaLocation="http://nifty-gui.sourceforge.net/nifty.xsd http://nifty-gui.sourceforge.net/nifty.xsd">
+    
+    <useStyles filename="nifty-default-styles.xml" />
+    <useControls filename="nifty-default-controls.xml" />
+    
+    <screen id="start" controller="mygame.GUI.MainMenuController">
+
+        <layer id="foreground" childLayout="center">
+
+            <panel id="panel_background" width = "50%" height="80%"  childLayout="vertical">
+
+                <panel id="panel_top" backgroundColor="#ff0000ff" width="*" height="33%" childLayout="center">
+
+                    
+
+                </panel>
+
+                <panel id="panel_middle" backgroundColor="#1240abff" width="*" height="33%" childLayout="center">
+
+                    
+
+                </panel>
+
+                <panel id="panel_bottom" backgroundColor="#ffff00ff" width="*" height="*" childLayout="center">
+
+                    
+
+                </panel>
+
+            </panel>
+
+        </layer>
+
+    </screen>
+
+</nifty>
